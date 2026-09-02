@@ -6,9 +6,11 @@ Public website for corrugated packaging, manufacturing partners, and import/expo
 
 ## Live site
 
-After GitHub Pages is enabled, the site will be available at:
+**https://b2binc.in** (custom domain via GitHub Pages)
 
-`https://YOUR_GITHUB_USERNAME.github.io/b2binc/`
+Fallback: https://bhasker1998.github.io/b2binc/
+
+Repo: https://github.com/Bhasker1998/b2binc
 
 ## Local preview
 

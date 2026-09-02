@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="B2Binc export gallery — Indian handicrafts, sculptures and décor for international buyers." />
+  <title>Import & Export Gallery | B2Binc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-export">
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header class="header header--solid" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">B2B</span>
+        <span class="logo__group">
+          <span class="logo__text">B2Binc</span>
+          <span class="logo__tagline">Business to Business Indian National Commerce</span>
+        </span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html#corrugated">Corrugated</a>
+        <a href="index.html#partners">Partners</a>
+        <a href="index.html#capacity">Capacity</a>
+        <a href="import-export.html" class="is-active">Import / Export</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html#contact-form" class="btn btn--primary header__cta">Get a Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__bg">
+        <img
+          src="assets/export/hero.jpg"
+          alt="Indian sculpture for export"
+          width="1920"
+          height="600"
+        />
+        <div class="page-hero__overlay"></div>
+      </div>
+      <div class="container page-hero__content reveal">
+        <span class="tag tag--light">Import & Export</span>
+        <h1>Indian products for global markets</h1>
+        <p>Handicrafts, sculptures, décor and specialty goods — available for sourcing and export enquiry. Click any item for full details.</p>
+      </div>
+    </section>
+
+    <section class="export-showcase">
+      <div class="container">
+        <div class="export-showcase__head reveal">
+          <h2>What we export</h2>
+          <p>Curated Indian-origin products for international buyers, retailers and wholesalers.</p>
+        </div>
+        <div class="export-showcase__grid reveal">
+          <a href="#export-gallery" class="export-showcase__card">
+            <img src="assets/export/sculptures.jpg" alt="Sculptures and statues" loading="lazy" />
+            <span>Sculptures & Statues</span>
+          </a>
+          <a href="#export-gallery" class="export-showcase__card">
+            <img src="assets/export/handicrafts.jpg" alt="Indian handicrafts" loading="lazy" />
+            <span>Handicrafts</span>
+          </a>
+          <a href="#export-gallery" class="export-showcase__card">
+            <img src="assets/export/decor.jpg" alt="Home and lifestyle décor" loading="lazy" />
+            <span>Home & Lifestyle</span>
+          </a>
+          <a href="#export-gallery" class="export-showcase__card">
+            <img src="assets/export/shipping.jpg" alt="Global shipping and trade" loading="lazy" />
+            <span>Global Trade Logistics</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="export-gallery">
+      <div class="container">
+        <div class="filter-bar reveal" id="exportFilter" role="tablist"></div>
+        <div class="gallery-grid reveal" id="exportGallery"></div>
+      </div>
+    </section>
+
+    <section class="section section--gray export-banner">
+      <div class="container export-banner__inner reveal">
+        <img src="assets/export/temple.jpg" alt="Indian cultural heritage" loading="lazy" />
+        <div>
+          <h2>From artisan workshops to global buyers</h2>
+          <p>We coordinate export enquiries for sculptures, handicrafts and décor — with packaging, MOQ and shipping discussed per order.</p>
+        </div>
+        <img src="assets/export/handicrafts.jpg" alt="Handcrafted products" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="section section--gray">
+      <div class="container cta-band reveal">
+        <div>
+          <h2>Interested in exporting or importing?</h2>
+          <p>Share product, quantity and destination. Commercial terms confirmed separately.</p>
+        </div>
+        <a href="index.html#contact-form" class="btn btn--primary">Request export quote</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__mark">B2B</span>
+        <p>B2Binc — import & export division.</p>
+      </div>
+      <a href="index.html" class="footer__back">← Back to packaging home</a>
+      <p class="footer__copy">© <span id="year"></span> B2Binc.</p>
+    </div>
+  </footer>
+
+  <!-- Product detail modal -->
+  <dialog class="modal" id="productModal" aria-labelledby="modalTitle">
+    <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal__inner" id="modalContent"></div>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

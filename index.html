@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="B2Binc — Business to Business Indian National Commerce. Corrugated boxes, packaging materials & manufacturing partner network across India." />
-  <title>B2Binc | Corrugated & Packaging Solutions</title>
+  <meta name="description" content="B2Binc — Business to Business Indian National Commerce. Corrugated boxes, plastic packaging, BOPP bags & import/export." />
+  <title>B2Binc | Corrugated, Plastic & Trade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="page-home">
   <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
   <header class="header" id="header">
@@ -23,9 +23,9 @@
         </span>
       </a>
       <nav class="nav" id="nav" aria-label="Main">
-        <a href="#corrugated">Corrugated</a>
+        <a href="corrugated.html">Corrugated</a>
+        <a href="plastic-packaging.html">Plastic</a>
         <a href="#partners">Partners</a>
-        <a href="#capacity">Capacity</a>
         <a href="import-export.html">Import / Export</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -42,7 +42,7 @@
       <div class="hero__bg">
         <img
           src="assets/packaging/hero-warehouse.jpg"
-          alt="Corrugated packaging warehouse"
+          alt="Packaging warehouse"
           width="1920"
           height="1080"
           fetchpriority="high"
@@ -50,18 +50,18 @@
         <div class="hero__overlay"></div>
       </div>
       <div class="container hero__content">
-        <p class="hero__eyebrow reveal">B2Binc · Indian National Commerce</p>
-        <h1 class="hero__title reveal">
-          Your bridge to <em>quality</em> corrugated & packaging
+        <p class="hero__eyebrow reveal" data-reveal="fade-up" data-delay="0">B2Binc · Indian National Commerce</p>
+        <h1 class="hero__title reveal" data-reveal="fade-up" data-delay="80">
+          Your bridge to <em>quality</em> packaging &amp; trade
         </h1>
-        <p class="hero__lead reveal">
-          We tie up with trusted manufacturers across India — delivering corrugated boxes, printed cartons and packaging materials with reliable capacity and commercial coordination.
+        <p class="hero__lead reveal" data-reveal="fade-up" data-delay="160">
+          Corrugated through vetted partners, in-house plastic &amp; BOPP bags, plus import/export for global buyers — coordinated under one B2B brand.
         </p>
-        <div class="hero__actions reveal">
-          <a href="#corrugated" class="btn btn--primary">Corrugated Solutions</a>
-          <a href="import-export.html" class="btn btn--outline-light">Import & Export Gallery</a>
+        <div class="hero__actions reveal" data-reveal="fade-up" data-delay="240">
+          <a href="corrugated.html" class="btn btn--primary">Corrugated</a>
+          <a href="plastic-packaging.html" class="btn btn--outline-light">Plastic Packaging</a>
         </div>
-        <div class="hero__stats reveal">
+        <div class="hero__stats reveal" data-reveal="fade-up" data-delay="320">
           <div><strong data-count="25">0</strong><span>Partner factories</span></div>
           <div><strong data-count="500">0</strong><span>MT monthly capacity</span></div>
           <div><strong data-count="12">0</strong><span>States covered</span></div>
@@ -69,76 +69,56 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHT 1: CORRUGATED -->
+    <!-- CORRUGATED TEASER (like Import/Export) -->
     <section class="section section--light" id="corrugated">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="tag">Core Business</span>
-          <h2>Corrugated Boxes & Packaging Materials</h2>
-          <p>From shipping cartons to custom printed packaging — we source from vetted manufacturers and coordinate delivery for your business.</p>
+      <div class="container trade-teaser">
+        <div class="trade-teaser__copy reveal" data-reveal="fade-right">
+          <span class="tag">Separate Division</span>
+          <h2>Corrugated Packaging</h2>
+          <p>Shipping boxes, printed cartons and custom constructions — sourced from vetted manufacturers with reliable capacity and commercial coordination.</p>
+          <a href="corrugated.html" class="btn btn--primary">Explore Corrugated →</a>
         </div>
-
-        <div class="split reveal">
-          <div class="split__media">
-            <img
-              src="assets/packaging/boxes-stack.jpg"
-              alt="Stacked corrugated boxes in production"
-              width="900"
-              height="600"
-              loading="lazy"
-            />
-            <div class="split__badge">ISO-ready partners</div>
-          </div>
-          <div class="split__content">
-            <h3>What we supply</h3>
-            <ul class="check-list">
-              <li>3-ply & 5-ply corrugated shipping boxes</li>
-              <li>Printed & branded cartons</li>
-              <li>E-commerce mailer boxes</li>
-              <li>Industrial transit packaging</li>
-              <li>Polythene bags & stretch films</li>
-              <li>Protective packaging materials</li>
-            </ul>
-            <a href="#contact-form" class="btn btn--primary">Request packaging quote</a>
-          </div>
+        <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-left" aria-label="Corrugated product preview">
+          <img src="assets/packaging/corr-shipping-box.jpg" alt="Corrugated shipping box" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-open-box.jpg" alt="Kraft corrugated carton" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-boxes-stack.jpg" alt="Industrial packing in corrugated box" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-stack-warehouse.jpg" alt="Stacked shipping boxes in warehouse" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-packing-station.jpg" alt="Corrugated box fulfilment" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/shipping.jpg" alt="Warehouse racks with cardboard boxes" loading="lazy" class="trade-mosaic__item" />
         </div>
+      </div>
+    </section>
 
-        <div class="card-grid reveal">
-          <article class="feature-card">
-            <img src="assets/packaging/boxes-stack.jpg" alt="Shipping boxes stacked in warehouse" loading="lazy" />
-            <div class="feature-card__body">
-              <h4>Shipping Boxes</h4>
-              <p>Standard & custom sizes for logistics, FMCG and e-commerce fulfilment.</p>
-            </div>
-          </article>
-          <article class="feature-card">
-            <img src="assets/packaging/printed-packaging.jpg" alt="Printed packaging" loading="lazy" />
-            <div class="feature-card__body">
-              <h4>Printed Cartons</h4>
-              <p>Flexo & offset printed boxes with your brand artwork and dielines.</p>
-            </div>
-          </article>
-          <article class="feature-card">
-            <img src="assets/packaging/manufacturing.jpg" alt="Manufacturing line" loading="lazy" />
-            <div class="feature-card__body">
-              <h4>Custom Manufacturing</h4>
-              <p>Die-cut, inserts and specialty constructions matched to your product.</p>
-            </div>
-          </article>
+    <!-- PLASTIC TEASER (like Import/Export) — different image set -->
+    <section class="section section--gray" id="plastic">
+      <div class="container trade-teaser trade-teaser--flip">
+        <div class="trade-teaser__copy reveal" data-reveal="fade-left">
+          <span class="tag tag--dark">Separate Division</span>
+          <h2>Plastic Packaging</h2>
+          <p>In-house BOPP bags, PP woven sacks, rice &amp; flour packs, LDPE and sutli — custom print programmes without external bag partners.</p>
+          <a href="plastic-packaging.html" class="btn btn--primary">Explore Plastic Packaging →</a>
+        </div>
+        <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-right" aria-label="Plastic packaging product preview">
+          <img src="assets/packaging/bopp-custom-bag.jpg" alt="Custom BOPP bag" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/bopp-rice-amin.jpg" alt="Printed rice BOPP bag" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/woven-sack-standing.jpg" alt="PP woven sack" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/plastic-production.jpg" alt="In-house plastic production" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/bopp-rice-ammaas.jpg" alt="Laminated BOPP rice bag" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/bopp-rice-aaina.jpg" alt="Retail rice pouch" loading="lazy" class="trade-mosaic__item" />
         </div>
       </div>
     </section>
 
     <!-- PARTNERS -->
-    <section class="section section--gray" id="partners">
+    <section class="section section--light" id="partners">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head reveal" data-reveal="fade-up">
           <span class="tag tag--dark">Partner Network</span>
           <h2>Our Manufacturing Partners</h2>
-          <p>We work with multiple independent factories — each vetted for quality, capacity and commercial reliability.</p>
+          <p>Corrugated supply through vetted partner factories. Plastic &amp; BOPP bags are produced in-house — see the Plastic Packaging page.</p>
         </div>
-        <div class="filter-bar reveal" id="partnerFilter" role="tablist"></div>
-        <div class="partner-grid reveal" id="partnerGrid"></div>
+        <div class="filter-bar reveal" data-reveal="fade-up" data-delay="80" id="partnerFilter" role="tablist"></div>
+        <div class="partner-grid reveal reveal-stagger" data-reveal="fade-up" data-delay="120" id="partnerGrid"></div>
       </div>
     </section>
 
@@ -146,17 +126,17 @@
     <section class="section section--red" id="capacity">
       <div class="container">
         <div class="capacity-layout">
-          <div class="capacity-copy reveal">
+          <div class="capacity-copy reveal" data-reveal="fade-right">
             <span class="tag tag--light">Production Capacity</span>
             <h2>Scale you can count on</h2>
             <p>Combined network capacity across partner plants — from small-batch custom runs to high-volume commercial supply.</p>
           </div>
-          <div class="capacity-grid reveal" id="capacityGrid"></div>
+          <div class="capacity-grid reveal reveal-stagger" data-reveal="fade-left" id="capacityGrid"></div>
         </div>
-        <div class="capacity-visual reveal">
+        <div class="capacity-visual reveal" data-reveal="zoom-in" data-delay="100">
           <img
             src="assets/packaging/hero-warehouse.jpg"
-            alt="Corrugated box manufacturing and warehouse facility"
+            alt="Packaging manufacturing and warehouse facility"
             width="1400"
             height="500"
             loading="lazy"
@@ -165,22 +145,22 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHT 2: IMPORT EXPORT TEASER -->
+    <!-- IMPORT EXPORT TEASER -->
     <section class="section section--dark" id="trade">
       <div class="container trade-teaser">
-        <div class="trade-teaser__copy reveal">
+        <div class="trade-teaser__copy reveal" data-reveal="fade-right">
           <span class="tag tag--light">Separate Division</span>
-          <h2>Import & Export</h2>
-          <p>Indian handicrafts, sculptures, décor and specialty products for international buyers — browse our export gallery with full product details on click.</p>
+          <h2>Import &amp; Export</h2>
+          <p>Giftable Indian sculptures, brassware, pottery and textiles for international buyers — browse the export gallery with matching product details on click.</p>
           <a href="import-export.html" class="btn btn--primary">Explore Export Gallery →</a>
         </div>
-        <div class="trade-mosaic reveal" aria-label="Export product preview">
-          <img src="assets/export/brass.jpg" alt="Brass sculpture" loading="lazy" class="trade-mosaic__item trade-mosaic__item--tall" />
-          <img src="assets/export/hero.jpg" alt="Marble Buddha statue" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/handicrafts.jpg" alt="Indian handicrafts" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/textiles.jpg" alt="Block print textiles" loading="lazy" class="trade-mosaic__item trade-mosaic__item--wide" />
-          <img src="assets/export/temple.jpg" alt="Indian temple architecture" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/shipping.jpg" alt="International shipping containers" loading="lazy" class="trade-mosaic__item" />
+        <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-left" aria-label="Export gift product preview">
+          <img src="assets/export/brass.jpg" alt="Brass Ganesha idol" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/export/decor.jpg" alt="Brass Lakshmi oil lamp" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/export/pottery.jpg" alt="Jaipur blue pottery vase" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/export/sculptures.jpg" alt="Marble elephant sculpture" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/export/textiles.jpg" alt="Elephant motif pashmina scarf" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/export/handicrafts.jpg" alt="Brass panch aarti diya" loading="lazy" class="trade-mosaic__item" />
         </div>
       </div>
     </section>
@@ -188,9 +168,9 @@
     <!-- CONTACT -->
     <section class="section section--light" id="contact">
       <div class="container contact-layout">
-        <div class="contact-info reveal">
+        <div class="contact-info reveal" data-reveal="fade-right">
           <span class="tag">Connect</span>
-          <h2>Contact & Enquiries</h2>
+          <h2>Contact &amp; Enquiries</h2>
           <p>Tell us your packaging or trade requirement. Our team responds within 1–2 business days.</p>
           <ul class="contact-list">
             <li>
@@ -211,7 +191,7 @@
             </li>
           </ul>
         </div>
-        <div class="reveal" id="contact-form">
+        <div class="reveal" id="contact-form" data-reveal="fade-left" data-delay="80">
           <form class="form" id="queryForm" novalidate>
             <h3>Submit your query</h3>
             <div class="form__row">
@@ -238,7 +218,8 @@
               <label for="interest">I am interested in</label>
               <select id="interest" name="interest" required>
                 <option value="">Select</option>
-                <option>Corrugated / Packaging</option>
+                <option>Corrugated Packaging</option>
+                <option>Plastic / BOPP Bags</option>
                 <option>Import / Export</option>
                 <option>Become a Partner</option>
                 <option>General Enquiry</option>
@@ -264,7 +245,8 @@
         <p>B2Binc — Business to Business Indian National Commerce.</p>
       </div>
       <nav class="footer__nav">
-        <a href="#corrugated">Corrugated</a>
+        <a href="corrugated.html">Corrugated</a>
+        <a href="plastic-packaging.html">Plastic</a>
         <a href="import-export.html">Import / Export</a>
         <a href="#contact">Contact</a>
       </nav>

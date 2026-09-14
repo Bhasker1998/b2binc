@@ -11,17 +11,59 @@
   /* Progress + header */
   const header = $("#header");
   const progressBar = $("#progressBar");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Scroll-linked background atmosphere (site-wide) */
+  let orbA = null;
+  let orbB = null;
+  let orbC = null;
+
+  if (!prefersReduced) {
+    const atmosphere = document.createElement("div");
+    atmosphere.className = "scroll-atmosphere";
+    atmosphere.setAttribute("aria-hidden", "true");
+    atmosphere.innerHTML = `
+      <span class="scroll-atmosphere__orb scroll-atmosphere__orb--a" data-orb="a"></span>
+      <span class="scroll-atmosphere__orb scroll-atmosphere__orb--b" data-orb="b"></span>
+      <span class="scroll-atmosphere__orb scroll-atmosphere__orb--c" data-orb="c"></span>
+      <span class="scroll-atmosphere__grain"></span>
+    `;
+    document.body.prepend(atmosphere);
+    orbA = atmosphere.querySelector('[data-orb="a"]');
+    orbB = atmosphere.querySelector('[data-orb="b"]');
+    orbC = atmosphere.querySelector('[data-orb="c"]');
+  }
+
+  let scrollTicking = false;
+
+  function updateScrollAtmosphere() {
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? y / max : 0;
+
+    document.documentElement.style.setProperty("--scroll-y", `${y}px`);
+    document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(4));
+
+    header?.classList.toggle("is-scrolled", y > 50);
+    if (progressBar) progressBar.style.width = `${progress * 100}%`;
+
+    if (orbA) {
+      orbA.style.transform = `translate3d(${progress * 40}px, ${y * 0.18}px, 0)`;
+      orbB.style.transform = `translate3d(${progress * -55}px, ${y * -0.12}px, 0)`;
+      orbC.style.transform = `translate3d(${Math.sin(progress * Math.PI) * 30}px, ${y * 0.08}px, 0)`;
+    }
+
+    scrollTicking = false;
+  }
 
   function onScroll() {
-    const y = window.scrollY;
-    header?.classList.toggle("is-scrolled", y > 50);
-
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    if (progressBar) progressBar.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(updateScrollAtmosphere);
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  updateScrollAtmosphere();
 
   /* Mobile nav */
   const navToggle = $("#navToggle");
@@ -46,21 +88,67 @@
 
   /* Scroll reveal */
   const revealEls = $$(".reveal");
-  if ("IntersectionObserver" in window) {
+
+  function showReveal(el) {
+    const delay = Number(el.dataset.delay || 0);
+    if (delay > 0) {
+      setTimeout(() => el.classList.add("is-visible"), delay);
+    } else {
+      el.classList.add("is-visible");
+    }
+  }
+
+  if (!prefersReduced && "IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            showReveal(entry.target);
             io.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  /* Homepage / page scroll effects: hero parallax */
+  const heroImg = $(".hero__bg img");
+  const pageHeroImg = $(".page-hero__bg img");
+
+  if (!prefersReduced && (heroImg || pageHeroImg)) {
+    let parallaxTicking = false;
+
+    function updateParallax() {
+      const y = window.scrollY;
+
+      if (heroImg) {
+        const shift = Math.min(y * 0.32, 160);
+        heroImg.style.transform = `scale(1.1) translate3d(0, ${shift}px, 0)`;
+      }
+
+      if (pageHeroImg) {
+        const shift = Math.min(y * 0.22, 100);
+        pageHeroImg.style.transform = `scale(1.06) translate3d(0, ${shift}px, 0)`;
+      }
+
+      parallaxTicking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!parallaxTicking) {
+          requestAnimationFrame(updateParallax);
+          parallaxTicking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateParallax();
   }
 
   /* Hero counters */

@@ -117,9 +117,10 @@
 
   /* Homepage / page scroll effects: hero parallax */
   const heroImg = $(".hero__bg img");
-  const pageHeroImg = $(".page-hero__bg img");
+  const pageHeroImg = $(".page-hero__bg img:not(.hero-carousel__slide)");
+  const pageHeroSlides = $$(".page-hero__bg.hero-carousel .hero-carousel__slide");
 
-  if (!prefersReduced && (heroImg || pageHeroImg)) {
+  if (!prefersReduced && (heroImg || pageHeroImg || pageHeroSlides.length)) {
     let parallaxTicking = false;
 
     function updateParallax() {
@@ -133,6 +134,13 @@
       if (pageHeroImg) {
         const shift = Math.min(y * 0.22, 100);
         pageHeroImg.style.transform = `scale(1.06) translate3d(0, ${shift}px, 0)`;
+      }
+
+      if (pageHeroSlides.length) {
+        const shift = Math.min(y * 0.22, 100);
+        pageHeroSlides.forEach((img) => {
+          img.style.transform = `scale(1.06) translate3d(0, ${shift}px, 0)`;
+        });
       }
 
       parallaxTicking = false;
@@ -150,6 +158,72 @@
     );
     updateParallax();
   }
+
+  /* Auto image carousels */
+  function initCarousel(root) {
+    const slides = $$(
+      ".hero-carousel__slide, .image-carousel__slide",
+      root
+    );
+    if (slides.length < 2) return;
+
+    const dotsWrap = $(".hero-carousel__dots, .image-carousel__dots", root);
+    const interval = Number(root.dataset.interval) || 4500;
+    let index = slides.findIndex((s) => s.classList.contains("is-active"));
+    if (index < 0) index = 0;
+    let timer = null;
+
+    if (dotsWrap) {
+      dotsWrap.innerHTML = slides
+        .map(
+          (_, i) =>
+            `<button type="button" aria-label="Show slide ${i + 1}" data-slide="${i}"></button>`
+        )
+        .join("");
+    }
+
+    function goTo(next) {
+      slides[index]?.classList.remove("is-active");
+      index = ((next % slides.length) + slides.length) % slides.length;
+      slides[index].classList.add("is-active");
+      if (dotsWrap) {
+        $$("button", dotsWrap).forEach((btn, i) =>
+          btn.classList.toggle("is-active", i === index)
+        );
+      }
+    }
+
+    goTo(index);
+
+    function start() {
+      if (prefersReduced) return;
+      stop();
+      timer = window.setInterval(() => goTo(index + 1), interval);
+    }
+
+    function stop() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    dotsWrap?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-slide]");
+      if (!btn) return;
+      goTo(Number(btn.dataset.slide));
+      start();
+    });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+
+    start();
+  }
+
+  $$("[data-carousel]").forEach(initCarousel);
 
   /* Hero counters */
   function animateCount(el) {
@@ -180,54 +254,6 @@
     );
     statsIo.observe(heroStats);
   }
-
-  /* Partners */
-  const partnerGrid = $("#partnerGrid");
-  const partnerFilter = $("#partnerFilter");
-  let activePartnerFilter = "all";
-
-  function renderPartners() {
-    if (!partnerGrid || typeof PARTNERS === "undefined") return;
-
-    const list =
-      activePartnerFilter === "all"
-        ? PARTNERS
-        : PARTNERS.filter((p) => p.category === activePartnerFilter);
-
-    partnerGrid.innerHTML = list
-      .map(
-        (p) => `
-      <article class="partner-card">
-        <span class="partner-card__cat">${p.categoryLabel}</span>
-        <h3>${p.name}</h3>
-        <p class="partner-card__loc">${p.location}</p>
-        <p>${p.description}</p>
-        <div class="partner-card__tags">
-          ${p.capabilities.map((c) => `<span>${c}</span>`).join("")}
-        </div>
-      </article>`
-      )
-      .join("");
-  }
-
-  if (partnerFilter && typeof PARTNER_FILTERS !== "undefined") {
-    partnerFilter.innerHTML = PARTNER_FILTERS.map(
-      (f) =>
-        `<button type="button" class="filter-btn${f.id === activePartnerFilter ? " is-active" : ""}" data-filter="${f.id}">${f.label}</button>`
-    ).join("");
-
-    partnerFilter.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-filter]");
-      if (!btn) return;
-      activePartnerFilter = btn.dataset.filter;
-      $$(".filter-btn", partnerFilter).forEach((b) =>
-        b.classList.toggle("is-active", b.dataset.filter === activePartnerFilter)
-      );
-      renderPartners();
-    });
-  }
-
-  renderPartners();
 
   /* Capacity */
   const capacityGrid = $("#capacityGrid");

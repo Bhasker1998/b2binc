@@ -25,7 +25,6 @@
       <nav class="nav" id="nav" aria-label="Main">
         <a href="corrugated.html" class="is-active">Corrugated</a>
         <a href="plastic-packaging.html">Plastic</a>
-        <a href="index.html#partners">Partners</a>
         <a href="import-export.html">Import / Export</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -38,14 +37,50 @@
 
   <main>
     <section class="page-hero">
-      <div class="page-hero__bg">
+      <div
+        class="page-hero__bg hero-carousel"
+        data-carousel
+        data-interval="4500"
+        aria-roledescription="carousel"
+        aria-label="Corrugated packaging gallery"
+      >
         <img
-          src="assets/packaging/corr-pallet.jpg"
-          alt="Warehouse with corrugated boxes ready for B2B shipping"
+          class="hero-carousel__slide is-active"
+          src="assets/packaging/corr-moto-crate.jpg"
+          alt="B2Binc motorcycle packaging crate on a warehouse pallet"
+          width="1920"
+          height="600"
+        />
+        <img
+          class="hero-carousel__slide"
+          src="assets/packaging/corr-airport-custom.jpg"
+          alt="Custom B2Binc corrugated box on airport tarmac"
+          width="1920"
+          height="600"
+        />
+        <img
+          class="hero-carousel__slide"
+          src="assets/packaging/corr-office-box.jpg"
+          alt="Branded B2Binc corrugated shipping box on an office desk"
+          width="1920"
+          height="600"
+        />
+        <img
+          class="hero-carousel__slide"
+          src="assets/packaging/corr-moto-premium.jpg"
+          alt="Premium motorcycle corrugated packaging crate"
+          width="1920"
+          height="600"
+        />
+        <img
+          class="hero-carousel__slide"
+          src="assets/packaging/corr-airport-fragile.jpg"
+          alt="Custom corrugated box for fragile sculpture shipping"
           width="1920"
           height="600"
         />
         <div class="page-hero__overlay"></div>
+        <div class="hero-carousel__dots" role="tablist" aria-label="Carousel slides"></div>
       </div>
       <div class="container page-hero__content reveal">
         <span class="tag tag--light">Corrugated Division</span>
@@ -62,20 +97,20 @@
         </div>
         <div class="export-showcase__grid reveal">
           <a href="#corrugated-range" class="export-showcase__card">
-            <img src="assets/packaging/corr-shipping-box.jpg" alt="Open corrugated shipping box" loading="lazy" />
+            <img src="assets/packaging/corr-office-box.jpg" alt="Branded B2Binc shipping box" loading="lazy" />
             <span>Shipping Boxes</span>
           </a>
           <a href="#corrugated-range" class="export-showcase__card">
-            <img src="assets/packaging/corr-open-box.jpg" alt="Kraft corrugated carton" loading="lazy" />
-            <span>Cartons &amp; Mailers</span>
+            <img src="assets/packaging/corr-airport-custom.jpg" alt="Custom printed corrugated carton" loading="lazy" />
+            <span>Custom Print</span>
           </a>
           <a href="#corrugated-range" class="export-showcase__card">
-            <img src="assets/packaging/corr-boxes-stack.jpg" alt="Industrial parts packed in corrugated box" loading="lazy" />
+            <img src="assets/packaging/corr-moto-crate.jpg" alt="Motorcycle corrugated packaging crate" loading="lazy" />
             <span>Industrial Packing</span>
           </a>
           <a href="#corrugated-range" class="export-showcase__card">
-            <img src="assets/packaging/corr-stack-warehouse.jpg" alt="Stacked sealed shipping boxes in warehouse" loading="lazy" />
-            <span>Bulk Supply</span>
+            <img src="assets/packaging/corr-airport-fragile.jpg" alt="Fragile goods corrugated shipping box" loading="lazy" />
+            <span>Fragile &amp; Export</span>
           </a>
         </div>
       </div>
@@ -92,7 +127,7 @@
         <div class="division-grid reveal">
           <article class="division-card">
             <div class="division-card__media">
-              <img src="assets/packaging/corr-shipping-box.jpg" alt="3-ply and 5-ply shipping box" loading="lazy" />
+              <img src="assets/packaging/corr-office-box.jpg" alt="Branded B2Binc 3-ply and 5-ply shipping box" loading="lazy" />
             </div>
             <div class="division-card__body">
               <h3>3-Ply &amp; 5-Ply Shipping Boxes</h3>
@@ -101,7 +136,7 @@
           </article>
           <article class="division-card">
             <div class="division-card__media">
-              <img src="assets/packaging/corr-open-box.jpg" alt="Printed and branded carton style box" loading="lazy" />
+              <img src="assets/packaging/corr-airport-custom.jpg" alt="Custom designed corrugated export carton" loading="lazy" />
             </div>
             <div class="division-card__body">
               <h3>Printed &amp; Branded Cartons</h3>
@@ -110,52 +145,94 @@
           </article>
           <article class="division-card">
             <div class="division-card__media">
-              <img src="assets/packaging/corr-packing-station.jpg" alt="E-commerce fulfilment with corrugated box" loading="lazy" />
-            </div>
-            <div class="division-card__body">
-              <h3>E-commerce Mailer Boxes</h3>
-              <p>Lightweight mailers and branded unboxing packs for online fulfilment and D2C brands.</p>
-            </div>
-          </article>
-          <article class="division-card">
-            <div class="division-card__media">
-              <img src="assets/packaging/corr-boxes-stack.jpg" alt="Heavy industrial goods in corrugated packaging" loading="lazy" />
+              <img src="assets/packaging/corr-moto-crate.jpg" alt="Motorcycle packaging system corrugated crate" loading="lazy" />
             </div>
             <div class="division-card__body">
               <h3>Industrial Transit Packaging</h3>
-              <p>Heavy-duty corrugated for manufacturing clients — pallet boxes, bulk packs and specialty constructions.</p>
+              <p>Heavy-duty corrugated for manufacturing clients — pallet crates, bulk packs and specialty constructions.</p>
             </div>
           </article>
           <article class="division-card">
             <div class="division-card__media">
-              <img src="assets/packaging/corr-packaging-material.jpg" alt="Corrugated board and flattened box stock" loading="lazy" />
+              <img src="assets/packaging/corr-moto-premium.jpg" alt="Premium motorcycle corrugated packaging" loading="lazy" />
             </div>
             <div class="division-card__body">
-              <h3>Protective Packaging</h3>
-              <p>Die-cut inserts, partitions and board grades matched to fragile or high-value products.</p>
+              <h3>Premium Motorcycle Packaging</h3>
+              <p>Reinforced corrugated systems sized for two-wheelers and heavy goods — strap-ready and pallet-integrated.</p>
             </div>
           </article>
           <article class="division-card">
             <div class="division-card__media">
-              <img src="assets/packaging/corr-stack-warehouse.jpg" alt="Bulk stacked corrugated boxes ready to ship" loading="lazy" />
+              <img src="assets/packaging/corr-airport-fragile.jpg" alt="Corrugated box for fragile sculpture shipping" loading="lazy" />
             </div>
             <div class="division-card__body">
-              <h3>Bulk &amp; Programme Supply</h3>
-              <p>Warehouse-ready stacked supply for repeat B2B orders — from small custom runs to high-volume programmes.</p>
+              <h3>Fragile &amp; Sculpture Shipping</h3>
+              <p>Export-ready cartons for sculptures and fragile materials — handle-with-care marking and protective grades.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tag">Gallery</span>
+          <h2>Packaging in action</h2>
+          <p>Warehouse, export and branded corrugated — auto-rotating preview.</p>
+        </div>
+        <div
+          class="image-carousel reveal"
+          data-carousel
+          data-interval="4000"
+          aria-roledescription="carousel"
+          aria-label="Corrugated packaging photos"
+        >
+          <div class="image-carousel__viewport">
+            <img
+              class="image-carousel__slide is-active"
+              src="assets/packaging/corr-moto-crate.jpg"
+              alt="Motorcycle packaging crate in warehouse"
+              loading="lazy"
+            />
+            <img
+              class="image-carousel__slide"
+              src="assets/packaging/corr-airport-custom.jpg"
+              alt="Custom box on airport tarmac"
+              loading="lazy"
+            />
+            <img
+              class="image-carousel__slide"
+              src="assets/packaging/corr-office-box.jpg"
+              alt="Office desk branded shipping box"
+              loading="lazy"
+            />
+            <img
+              class="image-carousel__slide"
+              src="assets/packaging/corr-moto-premium.jpg"
+              alt="Premium motorcycle packaging crate"
+              loading="lazy"
+            />
+            <img
+              class="image-carousel__slide"
+              src="assets/packaging/corr-airport-fragile.jpg"
+              alt="Fragile goods corrugated box at airport"
+              loading="lazy"
+            />
+          </div>
+          <div class="image-carousel__dots" role="tablist" aria-label="Gallery slides"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--gray export-banner">
       <div class="container export-banner__inner reveal">
-        <img src="assets/packaging/corr-stack-warehouse.jpg" alt="Stacked corrugated shipping boxes" loading="lazy" />
+        <img src="assets/packaging/corr-moto-premium.jpg" alt="Premium motorcycle corrugated packaging" loading="lazy" />
         <div>
           <h2>Partner-backed corrugated supply</h2>
           <p>We coordinate with vetted corrugated manufacturers for quality, capacity and commercial reliability — the boxes and cartons B2B operations depend on every day.</p>
         </div>
-        <img src="assets/packaging/shipping.jpg" alt="Warehouse aisle with corrugated boxes on racks" loading="lazy" />
+        <img src="assets/packaging/corr-airport-fragile.jpg" alt="Export corrugated box for fragile goods" loading="lazy" />
       </div>
     </section>
 

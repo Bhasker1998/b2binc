@@ -93,7 +93,7 @@
       .map(
         (p) => `
       <button type="button" class="gallery-card" data-id="${p.id}" aria-label="View ${p.name}">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/export/decor.jpg';" />
+        <img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/export/ganesha-stone.jpg';" />
         <div class="gallery-card__body">
           <span class="gallery-card__cat">${p.categoryLabel}</span>
           <h3>${p.name}</h3>

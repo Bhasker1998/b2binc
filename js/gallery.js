@@ -5,14 +5,11 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
   const gallery = $("#exportGallery");
-  const filterBar = $("#exportFilter");
   const modal = $("#productModal");
   const modalContent = $("#modalContent");
   const modalClose = $("#modalClose");
 
   if (!gallery || typeof EXPORT_PRODUCTS === "undefined") return;
-
-  let activeFilter = "all";
 
   function openModal(product) {
     if (!modal || !modalContent) return;
@@ -84,47 +81,25 @@
   });
 
   function renderGallery() {
-    const list =
-      activeFilter === "all"
-        ? EXPORT_PRODUCTS
-        : EXPORT_PRODUCTS.filter((p) => p.category === activeFilter);
-
-    gallery.innerHTML = list
-      .map(
-        (p) => `
+    gallery.innerHTML = EXPORT_PRODUCTS.map(
+      (p) => `
       <button type="button" class="gallery-card" data-id="${p.id}" aria-label="View ${p.name}">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/export/ganesha-stone.jpg';" />
+        <img src="${p.image}" alt="${p.name}" loading="eager" decoding="async" width="800" height="1000" onerror="this.onerror=null;this.src='assets/export/ganesha-stone.jpg';" />
         <div class="gallery-card__body">
-          <span class="gallery-card__cat">${p.categoryLabel}</span>
           <h3>${p.name}</h3>
-          <p>${p.material} · ${p.origin}</p>
+          <p>${p.description}</p>
+          <p class="gallery-card__meta">${p.material} · ${p.origin}</p>
         </div>
       </button>`
-      )
-      .join("");
+    ).join("");
+
+    gallery.classList.add("is-visible");
 
     $$(".gallery-card", gallery).forEach((card) => {
       card.addEventListener("click", () => {
         const product = EXPORT_PRODUCTS.find((p) => p.id === card.dataset.id);
         if (product) openModal(product);
       });
-    });
-  }
-
-  if (filterBar && typeof EXPORT_FILTERS !== "undefined") {
-    filterBar.innerHTML = EXPORT_FILTERS.map(
-      (f) =>
-        `<button type="button" class="filter-btn${f.id === activeFilter ? " is-active" : ""}" data-filter="${f.id}">${f.label}</button>`
-    ).join("");
-
-    filterBar.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-filter]");
-      if (!btn) return;
-      activeFilter = btn.dataset.filter;
-      $$(".filter-btn", filterBar).forEach((b) =>
-        b.classList.toggle("is-active", b.dataset.filter === activeFilter)
-      );
-      renderGallery();
     });
   }
 

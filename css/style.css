@@ -960,13 +960,39 @@ ul { list-style: none; }
 .form__field textarea.is-error { border-color: var(--red); }
 
 .form__note {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  min-height: 1.25rem;
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  min-height: 1.4em;
 }
 
-.form__note.is-success { color: #15803d; }
-.form__note.is-error { color: var(--red); }
+.form__note.is-success {
+  color: #15803d;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+
+.form__note.is-error {
+  color: var(--red);
+  background: var(--red-soft);
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+
+.form__hint {
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--gray-500);
+}
+
+.form__hint a {
+  color: var(--red);
+  font-weight: 600;
+}
 
 .hp { position: absolute; left: -9999px; opacity: 0; }
 
@@ -1239,6 +1265,12 @@ ul { list-style: none; }
   text-align: left;
   background: var(--gray-100);
   transition: transform 0.35s var(--ease), box-shadow 0.35s;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  padding: 0;
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .gallery-card:hover {
@@ -1247,16 +1279,28 @@ ul { list-style: none; }
 }
 
 .gallery-card img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4/5;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center;
+  background: var(--gray-100);
   transition: transform 0.6s var(--ease);
+}
+
+.gallery-card--image {
+  background: transparent;
+}
+
+.gallery-card--image img {
+  border-radius: 8px;
 }
 
 .gallery-card:hover img { transform: scale(1.05); }
 
 .gallery-card__body {
-  padding: 1rem 1.1rem 1.25rem;
+  padding: 1rem 1.1rem 1.35rem;
   background: var(--white);
 }
 
@@ -1269,15 +1313,23 @@ ul { list-style: none; }
 }
 
 .gallery-card h3 {
-  margin-top: 0.35rem;
-  font-size: 1.05rem;
-  font-weight: 600;
+  margin-top: 0.2rem;
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.3;
 }
 
 .gallery-card p {
-  margin-top: 0.35rem;
-  font-size: 0.8rem;
-  color: var(--gray-500);
+  margin-top: 0.45rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--gray-700);
+}
+
+.gallery-card__meta {
+  margin-top: 0.55rem !important;
+  font-size: 0.72rem !important;
+  color: var(--gray-500) !important;
 }
 
 /* Modal */
@@ -1477,9 +1529,7 @@ ul { list-style: none; }
   transform: translateY(36px);
   transition:
     opacity 0.85s var(--ease),
-    transform 0.85s var(--ease),
-    filter 0.85s var(--ease);
-  filter: blur(2px);
+    transform 0.85s var(--ease);
   will-change: opacity, transform;
 }
 
@@ -1492,7 +1542,21 @@ ul { list-style: none; }
 .reveal.is-visible {
   opacity: 1;
   transform: none;
-  filter: blur(0);
+}
+
+/* Import/export: keep product grids visible (avoid mobile blank/white tiles) */
+.page-export .export-showcase__grid.is-visible,
+.page-export .gallery-grid.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.page-export .gallery-card img,
+.page-export .export-showcase__card img,
+.page-export .export-banner__inner img {
+  display: block;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Stagger children when parent becomes visible */
@@ -1688,6 +1752,7 @@ ul { list-style: none; }
 /* Plastic page — show full product bags without cropping */
 .page-plastic .export-showcase__card {
   background: #f3f4f6;
+  overflow: hidden;
 }
 
 .page-plastic .export-showcase__card img {
@@ -1705,16 +1770,18 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1.05;
+  aspect-ratio: 3 / 4;
+  min-height: 240px;
   background: linear-gradient(180deg, #f7f7f8 0%, #eef0f3 100%);
-  padding: 1rem;
+  padding: 0.85rem;
+  overflow: hidden;
 }
 
 .page-plastic .division-card__media img,
 .page-plastic .division-card > img {
   width: 100%;
   height: 100%;
-  max-height: 280px;
+  max-height: none;
   aspect-ratio: auto;
   object-fit: contain;
   object-position: center;
@@ -1727,11 +1794,14 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  overflow: visible;
 }
 
 .page-plastic .division-custom__media img {
   aspect-ratio: auto;
-  max-height: 360px;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
   object-fit: contain;
 }
 
@@ -1741,16 +1811,75 @@ ul { list-style: none; }
   padding: 0.75rem;
 }
 
-/* Home plastic mosaic — fill cells (no grey letterboxing) */
-#plastic .trade-mosaic__item {
-  object-fit: cover;
-  object-position: center center;
-  background: transparent;
+/* Mobile: avoid clipping tall bags — label under image, more room for product */
+@media (max-width: 767px) {
+  .page-plastic .export-showcase__card {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .page-plastic .export-showcase__card img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    max-height: 280px;
+    aspect-ratio: 3 / 4;
+    padding: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .page-plastic .export-showcase__label,
+  .page-plastic .export-showcase__card span.export-showcase__label {
+    position: static !important;
+    inset: auto !important;
+    background: #0f2744;
+    padding: 0.75rem 0.7rem 0.85rem !important;
+  }
+
+  .page-plastic .export-showcase__label em {
+    font-size: 0.68rem;
+  }
+
+  .page-plastic .division-card__media {
+    aspect-ratio: 3 / 4;
+    min-height: 260px;
+    padding: 0.75rem;
+  }
+
+  .page-plastic .division-card__media img,
+  .page-plastic .division-card > img {
+    max-height: none;
+    padding: 0;
+  }
+
+  .page-plastic .division-custom__media img {
+    max-height: 300px;
+  }
+
+  .page-plastic .page-hero__bg img {
+    object-fit: cover;
+    object-position: center top;
+  }
 }
 
-#plastic .trade-mosaic__item[src*="bopp-rice"],
-#plastic .trade-mosaic__item[src*="woven-sack"] {
-  object-position: center top;
+/* Home plastic mosaic — contain bags so they aren’t cropped */
+#plastic .trade-mosaic__item {
+  object-fit: contain;
+  object-position: center center;
+  background: #f3f4f6;
+}
+
+#plastic .trade-mosaic__item[src*="plastic-production"] {
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  #plastic .trade-mosaic {
+    grid-auto-rows: minmax(120px, 28vw);
+  }
 }
 
 /* Corrugated page — clear box product presentation */

@@ -79,11 +79,11 @@
         </div>
         <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-left" aria-label="Corrugated product preview">
           <img src="assets/packaging/corr-moto-crate.jpg" alt="Motorcycle packaging crate" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-airport-custom.jpg" alt="Custom corrugated export box" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-office-box.jpg" alt="Branded B2Binc shipping box" loading="lazy" class="trade-mosaic__item" />
           <img src="assets/packaging/corr-moto-premium.jpg" alt="Premium motorcycle packaging" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-airport-custom.jpg" alt="Custom corrugated export box" loading="lazy" class="trade-mosaic__item" />
           <img src="assets/packaging/corr-airport-fragile.jpg" alt="Fragile goods corrugated box" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-boxes-stack.jpg" alt="Industrial packing in corrugated box" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-box-assortment.jpg" alt="Assorted corrugated shipping boxes" loading="lazy" class="trade-mosaic__item" />
+          <img src="assets/packaging/corr-mailer-desk.jpg" alt="Corrugated mailer with flat packs" loading="lazy" class="trade-mosaic__item" />
         </div>
       </div>
     </section>
@@ -161,11 +161,11 @@
           <ul class="contact-list">
             <li>
               <strong>Email</strong>
-              <a href="mailto:hello@b2binc.com">hello@b2binc.com</a>
+              <a href="mailto:info@b2binc.in">info@b2binc.in</a>
             </li>
             <li>
               <strong>Phone</strong>
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+919999840805">+91 99998 40805</a>
             </li>
             <li>
               <strong>Office</strong>
@@ -180,6 +180,7 @@
         <div class="reveal" id="contact-form" data-reveal="fade-left" data-delay="80">
           <form class="form" id="queryForm" novalidate>
             <h3>Submit your query</h3>
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form__row">
               <div class="form__field">
                 <label for="name">Full Name</label>
@@ -214,8 +215,7 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="4" required placeholder="Quantity, size, location, timeline…"></textarea>
             </div>
-            <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <button type="submit" class="btn btn--primary btn--full">Send enquiry</button>
+            <button type="submit" class="btn btn--primary btn--full" id="formSubmitBtn">Send enquiry</button>
             <p class="form__note" id="formNote" role="status"></p>
           </form>
         </div>

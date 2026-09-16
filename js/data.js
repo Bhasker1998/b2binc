@@ -7,11 +7,18 @@ const CAPACITY = [
   { value: "MOQ", label: "Flexible — discussed per order" },
 ];
 
-const EXPORT_FILTERS = [
-  { id: "all", label: "All Sculptures" },
-  { id: "sculptures", label: "Sculptures" },
-];
-
+/**
+ * Contact form email delivery (Web3Forms — free)
+ * 1. Open https://web3forms.com
+ * 2. Enter info@b2binc.in and create an access key
+ * 3. Paste the key below (also check Spam for the key email)
+ */
+const CONTACT_CONFIG = {
+  email: "info@b2binc.in",
+  phone: "+91 99998 40805",
+  phoneHref: "tel:+919999840805",
+  web3formsAccessKey: "aceba07c-a936-4bba-8ef5-31eb7b9bcfdb",
+};
 /** Local images — each file matches the product labelled below */
 const EXPORT_IMAGES = {
   ganeshaStone: "assets/export/ganesha-stone.jpg",
@@ -47,7 +54,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Temple & home décor sculpture",
     description:
-      "Seated Lord Ganesha under an ornate carved arch (prabhavali), with Mushika at the base and the inscription श्री गणेशाय नमः — Vakratunda Mahakaya.",
+      "Seated Lord Ganesha under an ornate carved arch (prabhavali), with axe, noose, modak and abhaya mudra. Mushika sits at the base. Inscribed श्री गणेशाय नमः — Vakratunda Mahakaya. Ideal for temples, homes and cultural retail export.",
   },
   {
     id: "e2",
@@ -66,7 +73,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Dashavatara-arch Vishnu idol",
     description:
-      "Standing Chaturbhuja Vishnu on a lotus pedestal with chakra, shankha, gada and abhaya mudra. Base inscribed ॐ नमो भगवते वासुदेवाय ॥ श्री विष्णवे नमः ॥",
+      "Standing Chaturbhuja Vishnu on a lotus pedestal holding chakra, shankha and gada, with abhaya mudra. Ornate Dashavatara-style arch and base mantra ॐ नमो भगवते वासुदेवाय ॥ श्री विष्णवे नमः ॥ — suited to temple and collector markets.",
   },
   {
     id: "e3",
@@ -85,7 +92,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Marble Mahadev sculpture",
     description:
-      "Lord Shiva seated on Nandi in white marble, holding trishula and damaru. Base inscribed ॐ नमः शिवाय ॥ हर हर महादेव ॥",
+      "White marble Mahadev seated on reclining Nandi, holding trishula and damaru with serpent and crescent moon detail. Base inscribed ॐ नमः शिवाय ॥ हर हर महादेव ॥ — a premium marble export piece for puja and décor.",
   },
   {
     id: "e4",
@@ -104,7 +111,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Stone Mahadev sculpture",
     description:
-      "Lord Shiva seated on reclining Nandi in dark stone, with serpent, rudraksha and crescent moon. Base: ॐ नमः शिवाय ॥ हर हर महादेव ॥",
+      "Dark stone Shiva seated on Nandi with rudraksha mala, serpent, trishula and damaru. Strong temple carving style with base mantra ॐ नमः शिवाय ॥ हर हर महादेव ॥ — durable for indoor display and export packing.",
   },
   {
     id: "e5",
@@ -123,7 +130,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Flute Krishna with prabhavali",
     description:
-      "Lord Krishna in tribhanga pose playing the flute, framed by a peacock-and-cow carved arch. Base: श्रीमद् भगवतम् श्री कृष्णाय नमः",
+      "Lord Krishna in tribhanga pose playing the flute, framed by a peacock-and-cow carved arch. Peacock feather at the feet and base text श्रीमद् भगवतम् श्री कृष्णाय नमः — popular for homes, temples and gift retail abroad.",
   },
   {
     id: "e6",
@@ -142,7 +149,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Ramayana family panel",
     description:
-      "Ram Darbar — Lord Rama with Sita, Lakshmana and kneeling Hanuman under a carved arch. Base: ॥ श्रीराम दरबारः ॥ सिया राम चन्द्राय नमः ॥",
+      "Complete Ram Darbar panel — Lord Rama with Sita, Lakshmana and kneeling Hanuman under a carved arch. Base reads ॥ श्रीराम दरबारः ॥ सिया राम चन्द्राय नमः ॥ — a centrepiece sculpture for temples and cultural buyers.",
   },
   {
     id: "e7",
@@ -161,7 +168,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — finish options",
     exportNote: "Durga on lion with halo",
     description:
-      "Multi-armed Goddess Durga seated on her lion vahana within a flame-edged aureole, mounted on a polished wooden base.",
+      "Multi-armed Goddess Durga seated on her lion vahana within a flame-edged aureole, holding traditional weapons with abhaya mudra. Antique bronze finish on a wooden base — suited to festive and collector export lines.",
   },
   {
     id: "e8",
@@ -180,7 +187,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Meditative Hanuman with gada",
     description:
-      "Lord Hanuman seated in padmasana with hands in meditation, gada beside the pedestal. Base inscribed ॥ श्री हनुमते नमः ॥",
+      "Lord Hanuman in padmasana meditation with joined hands, ornate crown and gada beside the pedestal. Base inscribed ॥ श्री हनुमते नमः ॥ — calm devotion form for home altars and export catalogues.",
   },
   {
     id: "e9",
@@ -199,7 +206,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size options",
     exportNote: "Seated Rama with bow",
     description:
-      "Seated Lord Rama on a lotus pedestal with bow, quiver and abhaya mudra, mounted on a circular wooden base.",
+      "Seated Lord Rama on a lotus pedestal with bow, quiver over the shoulder and abhaya mudra, set on a circular wooden base. Compact display idol for retail and international B2B orders.",
   },
   {
     id: "e10",
@@ -218,7 +225,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — size & finish",
     exportNote: "Lotus-base silver Ganesha",
     description:
-      "Seated Lord Ganesha in polished silver finish on an ornate lotus base with wooden platform — axe, noose, modak and abhaya mudra.",
+      "Polished silver-finish Ganesha on an ornate lotus base with wooden platform — axe, noose, modak and blessing mudra. Bright metallic look for festive retail and premium export programmes.",
   },
   {
     id: "e11",
@@ -237,7 +244,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — finish options",
     exportNote: "Flute Krishna with aureole",
     description:
-      "Lord Krishna playing the bansuri in tribhanga pose within a circular flame aureole, peacock feather on the crown, on a wooden base.",
+      "Antique bronze Krishna playing the bansuri in tribhanga pose inside a circular flame aureole, peacock feather on the crown, on a wooden base. Classic South Indian metal form for décor and devotion markets.",
   },
   {
     id: "e12",
@@ -256,7 +263,7 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — finish options",
     exportNote: "Nataraja-style dancing Ganesha",
     description:
-      "Dynamic dancing Lord Ganesha within a circular prabhavali, with Mushika at the lotus base — axe, noose, modak and abhaya mudra.",
+      "Dynamic dancing Ganesha within a circular prabhavali, with Mushika at the lotus base — axe, noose, modak and abhaya mudra. Antique copper-bronze finish suited to modern interiors and export gift lines.",
   },
   {
     id: "e13",
@@ -275,6 +282,6 @@ const EXPORT_PRODUCTS = [
     customizable: "Yes — finish options",
     exportNote: "Classic Ananda Tandava form",
     description:
-      "Lord Shiva as Nataraja in Ananda Tandava within a ring of fire, standing on Apasmara — classic South Indian bronze form on a wooden base.",
+      "Lord Shiva as Nataraja in Ananda Tandava within a ring of fire, standing on Apasmara — classic South Indian bronze iconography on a wooden base. A signature piece for museums, boutiques and cultural export buyers.",
   },
 ];

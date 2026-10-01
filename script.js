@@ -216,11 +216,153 @@ if(productSlideshow){
  schedule();
 }
 
-const form=$('#quoteForm'), status=$('#formStatus');
-form.addEventListener('submit',e=>{
- e.preventDefault();const d=Object.fromEntries(new FormData(form));
- status.textContent=`Prototype enquiry captured for ${d.company}. Connect this form to your email/CRM endpoint before production launch.`;
- form.reset();
+/* Contact form → Web3Forms → info@b2binc.in (same delivery as the previous site) */
+const CONTACT_CONFIG = {
+  email: "info@b2binc.in",
+  web3formsAccessKey: "aceba07c-a936-4bba-8ef5-31eb7b9bcfdb",
+};
+
+const form = $("#quoteForm");
+const formStatus = $("#formStatus");
+const CONTACT_EMAIL = CONTACT_CONFIG.email;
+const ACCESS_KEY = (CONTACT_CONFIG.web3formsAccessKey || "").trim();
+const SUBMIT_HTML = "Send enquiry <b>↗</b>";
+
+function showFormStatus(type, text) {
+  if (!formStatus) return;
+  formStatus.className = `form-status full is-${type}`;
+  formStatus.textContent = text;
+  formStatus.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function openMailto(data) {
+  const subject = encodeURIComponent("New enquiry from B2Binc website");
+  const body = encodeURIComponent(
+    [
+      `Name: ${data.name}`,
+      `Company: ${data.company}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Interest: ${data.interest}`,
+      "",
+      data.message,
+    ].join("\n")
+  );
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const botcheck = form.elements.namedItem("botcheck");
+  if (botcheck && botcheck.checked) {
+    showFormStatus("success", "Thank you! We will contact you shortly.");
+    form.reset();
+    return;
+  }
+
+  const required = ["name", "company", "email", "phone", "interest", "message"];
+  let valid = true;
+
+  required.forEach((field) => {
+    const input = form.elements[field];
+    if (!input) return;
+    const ok = String(input.value || "").trim().length > 0;
+    input.classList.toggle("is-error", !ok);
+    if (!ok) valid = false;
+  });
+
+  const emailInput = form.elements.email;
+  if (emailInput && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+    emailInput.classList.add("is-error");
+    valid = false;
+  }
+
+  if (!valid) {
+    showFormStatus("error", "Please fill in all required fields correctly.");
+    return;
+  }
+
+  const data = {
+    name: form.elements.name.value.trim(),
+    company: form.elements.company.value.trim(),
+    email: form.elements.email.value.trim(),
+    phone: form.elements.phone.value.trim(),
+    interest: form.elements.interest.value,
+    message: form.elements.message.value.trim(),
+  };
+
+  const submitBtn = $("#formSubmitBtn") || form.querySelector('button[type="submit"]');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+  }
+
+  const restoreBtn = () => {
+    if (!submitBtn) return;
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = SUBMIT_HTML;
+  };
+
+  if (!ACCESS_KEY) {
+    openMailto(data);
+    showFormStatus(
+      "error",
+      `Automatic email is not set up yet. Your mail app opened with the enquiry — click Send to email ${CONTACT_EMAIL}.`
+    );
+    restoreBtn();
+    return;
+  }
+
+  showFormStatus("success", `Sending your enquiry to ${CONTACT_EMAIL}…`);
+
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "New enquiry from B2Binc website",
+        from_name: "B2Binc Website",
+        replyto: data.email,
+        name: data.name,
+        company: data.company,
+        email: data.email,
+        phone: data.phone,
+        interest: data.interest,
+        message: data.message,
+      }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timer);
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && result.success) {
+      showFormStatus(
+        "success",
+        `Thank you! Your enquiry has been sent to ${CONTACT_EMAIL}. Our team will respond within 1–2 business days.`
+      );
+      form.reset();
+    } else {
+      throw new Error(result.message || "send failed");
+    }
+  } catch (err) {
+    clearTimeout(timer);
+    openMailto(data);
+    showFormStatus(
+      "error",
+      `Could not send automatically (${err.message || "network error"}). Your mail app opened — please click Send to email ${CONTACT_EMAIL}.`
+    );
+  } finally {
+    restoreBtn();
+  }
 });
 
 $('#year').textContent=new Date().getFullYear();

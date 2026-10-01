@@ -440,3 +440,11 @@ footer{background:#0c0e0f;color:#fff;border-top:1px solid #262a2b}.footer-inner{
 @keyframes productFormatSwipeOutRight{0%{transform:translateX(0);opacity:1}100%{transform:translateX(100%);opacity:1}}
 [data-product-slideshow] .product-slideshow-frame.swipe-right-out img{animation:productFormatSwipeOutRight .48s ease both!important}
 [data-product-slideshow] .product-slideshow-frame.swipe-right-in img{animation:productFormatSwipeInRight .7s ease both!important}
+
+.quote-form{position:relative}
+.quote-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.quote-form input.is-error,.quote-form select.is-error,.quote-form textarea.is-error{border-color:#c0392b;background:#fff5f4}
+.form-status{min-height:1.2em;font-size:13px;line-height:1.5;font-weight:600}
+.form-status.is-success{color:#1b6b3a}
+.form-status.is-error{color:#c0392b}
+.quote-form button:disabled{opacity:.7;cursor:wait}

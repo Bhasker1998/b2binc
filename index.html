@@ -376,15 +376,29 @@
             <div><small>OFFICE</small><b>Gurugram, Haryana, India</b></div>
           </div>
         </div>
-        <form class="quote-form" id="quoteForm">
-          <label>Name<input name="name" required placeholder="Your name"></label>
-          <label>Company<input name="company" required placeholder="Company"></label>
-          <label>Email<input name="email" type="email" required placeholder="name@company.com"></label>
-          <label>Phone<input name="phone" required placeholder="+91"></label>
-          <label class="full">Requirement<select name="interest"><option>Corrugated Board</option><option>Shipping Boxes</option><option>E-commerce Mailers</option><option>Industrial Packaging</option><option>Printed Cartons</option><option>Custom / Die-cut</option><option>Other</option></select></label>
-          <label class="full">Message<textarea name="message" rows="5" placeholder="Size, quantity, product, destination, timeline..."></textarea></label>
-          <button class="button orange full" type="submit">Send enquiry <b>↗</b></button>
-          <div class="form-status full" id="formStatus"></div>
+        <form class="quote-form" id="quoteForm" novalidate>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label>Name<input id="name" name="name" required autocomplete="name" placeholder="Your name"></label>
+          <label>Company<input id="company" name="company" required placeholder="Company"></label>
+          <label>Email<input id="email" name="email" type="email" required autocomplete="email" placeholder="name@company.com"></label>
+          <label>Phone<input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91"></label>
+          <label class="full">Requirement
+            <select id="interest" name="interest" required>
+              <option value="">Select</option>
+              <option>Corrugated Board</option>
+              <option>Shipping Boxes</option>
+              <option>E-commerce Mailers</option>
+              <option>Industrial Packaging</option>
+              <option>Printed Cartons</option>
+              <option>Custom / Die-cut</option>
+              <option>Plastic / BOPP Bags</option>
+              <option>Import / Export</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="full">Message<textarea id="message" name="message" rows="5" required placeholder="Size, quantity, product, destination, timeline..."></textarea></label>
+          <button class="button orange full" id="formSubmitBtn" type="submit">Send enquiry <b>↗</b></button>
+          <div class="form-status full" id="formStatus" role="status"></div>
         </form>
       </div>
     </section>

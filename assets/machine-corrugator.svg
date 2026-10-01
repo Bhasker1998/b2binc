@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+<rect width="900" height="520" rx="28" fill="#171b1c"/>
+<g stroke="#aeb5b6" stroke-width="8" fill="none">
+<path d="M65 390h770"/><path d="M95 365h700"/>
+<path d="M115 180h130v155H115z"/><path d="M260 155h140v180H260z"/>
+<path d="M420 125h170v210H420z"/><path d="M610 170h120v165H610z"/>
+</g>
+<g fill="#e85b22"><rect x="125" y="205" width="35" height="115" rx="6"/><rect x="295" y="190" width="35" height="130" rx="6"/><rect x="470" y="160" width="35" height="160" rx="6"/><rect x="655" y="205" width="35" height="115" rx="6"/></g>
+<g fill="#2d3334" stroke="#c2c8c9" stroke-width="5"><circle cx="190" cy="355" r="38"/><circle cx="330" cy="355" r="38"/><circle cx="505" cy="355" r="38"/><circle cx="670" cy="355" r="38"/></g>
+<path d="M70 405 C180 365 220 435 330 395 S500 370 610 405 S760 435 830 390" stroke="#d59a5a" stroke-width="18" fill="none"/>
+<text x="60" y="80" fill="#fff" font-family="Arial" font-size="30" font-weight="700">CORRUGATOR / BOARD LINE</text>
+<text x="60" y="112" fill="#9aa1a2" font-family="Arial" font-size="18">Fluting • Liner bonding • Board forming</text>
+</svg>

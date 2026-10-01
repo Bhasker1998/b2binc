@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+<rect width="900" height="520" rx="28" fill="#171b1c"/>
+<g fill="#252b2c" stroke="#a7adae" stroke-width="7"><rect x="90" y="175" width="170" height="165" rx="12"/><rect x="280" y="145" width="220" height="195" rx="12"/><rect x="520" y="175" width="170" height="165" rx="12"/></g>
+<g fill="#e85b22"><rect x="125" y="205" width="34" height="105" rx="5"/><rect x="330" y="180" width="34" height="135" rx="5"/><rect x="565" y="205" width="34" height="105" rx="5"/></g>
+<g fill="#d59a5a"><circle cx="220" cy="375" r="28"/><circle cx="390" cy="375" r="28"/><circle cx="625" cy="375" r="28"/></g>
+<path d="M50 420h800" stroke="#d59a5a" stroke-width="18"/>
+<path d="M140 400h610" stroke="#777" stroke-width="8"/>
+<g fill="#eee"><circle cx="700" cy="245" r="5"/><circle cx="715" cy="245" r="5"/><circle cx="730" cy="245" r="5"/><circle cx="745" cy="245" r="5"/></g>
+<text x="60" y="65" fill="#fff" font-family="Arial" font-size="30" font-weight="700">FOLDER • GLUER • STITCHER</text>
+<text x="60" y="100" fill="#9aa1a2" font-family="Arial" font-size="18">Folding • Adhesive bonding • Pin stitching</text>
+</svg>

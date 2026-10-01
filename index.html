@@ -1,245 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="B2Binc — Business to Business Indian National Commerce. Corrugated boxes, plastic packaging, BOPP bags & import/export." />
-  <title>B2Binc | Corrugated, Plastic & Trade</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>B2Binc | Corrugated Packaging & B2B Commerce</title>
+  <link rel="icon" type="image/svg+xml" href="assets/b2binc-favicon.svg?v=2">
+  <link rel="shortcut icon" href="assets/b2binc-favicon.svg?v=2">
+  <meta name="description" content="B2Binc — Business to Business Indian National Commerce. Corrugated boards, custom cartons, industrial packaging, quality testing and B2B supply coordination.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-home">
-  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+<body>
+  <div class="top-progress"></div>
+  <div class="grain"></div>
 
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="index.html" class="logo">
-        <span class="logo__mark">B2B</span>
-        <span class="logo__group">
-          <span class="logo__text">B2Binc</span>
-          <span class="logo__tagline">Business to Business Indian National Commerce</span>
-        </span>
-      </a>
-      <nav class="nav" id="nav" aria-label="Main">
-        <a href="corrugated.html">Corrugated</a>
-        <a href="plastic-packaging.html">Plastic</a>
-        <a href="import-export.html">Import / Export</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="#contact-form" class="btn btn--primary header__cta">Get a Quote</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <header class="header">
+    <a class="logo" href="#home">
+      <span class="logo-mark">B2B</span>
+      <span><b>B2Binc</b><small>BUSINESS TO BUSINESS INDIAN NATIONAL COMMERCE</small></span>
+    </a>
+    <button class="hamburger" aria-label="Menu">☰</button>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#infrastructure">Infrastructure</a>
+      <a href="#quality">Quality</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="#contact">Get a Quote <span>↗</span></a>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero__bg">
-        <img
-          src="assets/packaging/hero-warehouse.jpg"
-          alt="Packaging warehouse"
-          width="1920"
-          height="1080"
-          fetchpriority="high"
-        />
-        <div class="hero__overlay"></div>
-      </div>
-      <div class="container hero__content">
-        <p class="hero__eyebrow reveal" data-reveal="fade-up" data-delay="0">B2Binc · Indian National Commerce</p>
-        <h1 class="hero__title reveal" data-reveal="fade-up" data-delay="80">
-          Your bridge to <em>quality</em> packaging &amp; trade
-        </h1>
-        <p class="hero__lead reveal" data-reveal="fade-up" data-delay="160">
-          Corrugated through vetted partners, in-house plastic &amp; BOPP bags, plus import/export for global buyers — coordinated under one B2B brand.
-        </p>
-        <div class="hero__actions reveal" data-reveal="fade-up" data-delay="240">
-          <a href="corrugated.html" class="btn btn--primary">Corrugated</a>
-          <a href="plastic-packaging.html" class="btn btn--outline-light">Plastic Packaging</a>
-        </div>
-        <div class="hero__stats reveal" data-reveal="fade-up" data-delay="320">
-          <div><strong data-count="25">0</strong><span>Manufacturing units</span></div>
-          <div><strong data-count="500">0</strong><span>MT monthly capacity</span></div>
-          <div><strong data-count="12">0</strong><span>States covered</span></div>
-        </div>
-      </div>
-    </section>
+    <section class="hero" id="home">
+      <div class="hero-lines"></div>
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="hero-image"><img src="assets/industrial-packaging.jpeg" alt="Corrugated industrial packaging"></div>
+      <div class="hero-overlay"></div>
 
-    <!-- CORRUGATED TEASER (like Import/Export) -->
-    <section class="section section--light" id="corrugated">
-      <div class="container trade-teaser">
-        <div class="trade-teaser__copy reveal" data-reveal="fade-right">
-          <span class="tag">Separate Division</span>
-          <h2>Corrugated Packaging</h2>
-          <p>Shipping boxes, printed cartons and custom constructions — sourced from vetted manufacturers with reliable capacity and commercial coordination.</p>
-          <a href="corrugated.html" class="btn btn--primary">Explore Corrugated →</a>
+      <div class="hero-inner reveal">
+        <div class="hero-tag"><span></span> PACKAGING / MANUFACTURING / TRADE</div>
+        <h1>We engineer the<br><i>packaging that protects</i><br>your product.</h1>
+        <p>Corrugated packaging, custom cartons and industrial transit solutions coordinated through one B2B partner.</p>
+        <div class="hero-buttons">
+          <a href="#products" class="button orange">Explore packaging <b>↓</b></a>
+          <a href="#infrastructure" class="button outline">See capabilities</a>
         </div>
-        <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-left" aria-label="Corrugated product preview">
-          <img src="assets/packaging/corr-moto-crate.jpg" alt="Motorcycle packaging crate" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-moto-premium.jpg" alt="Premium motorcycle packaging" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-airport-custom.jpg" alt="Custom corrugated export box" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-airport-fragile.jpg" alt="Fragile goods corrugated box" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-box-assortment.jpg" alt="Assorted corrugated shipping boxes" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/corr-mailer-desk.jpg" alt="Corrugated mailer with flat packs" loading="lazy" class="trade-mosaic__item" />
-        </div>
-      </div>
-    </section>
 
-    <!-- PLASTIC TEASER (like Import/Export) — different image set -->
-    <section class="section section--gray" id="plastic">
-      <div class="container trade-teaser trade-teaser--flip">
-        <div class="trade-teaser__copy reveal" data-reveal="fade-left">
-          <span class="tag tag--dark">Separate Division</span>
-          <h2>Plastic Packaging</h2>
-          <p>In-house BOPP bags, PP woven sacks, rice &amp; flour packs, LDPE and sutli — custom print programmes without external bag partners.</p>
-          <a href="plastic-packaging.html" class="btn btn--primary">Explore Plastic Packaging →</a>
-        </div>
-        <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-right" aria-label="Plastic packaging product preview">
-          <img src="assets/packaging/bopp-custom-bag.jpg" alt="Custom BOPP bag" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/bopp-rice-amin.jpg" alt="Printed rice BOPP bag" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/woven-sack-standing.jpg" alt="PP woven sack" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/plastic-production.jpg" alt="In-house plastic production" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/bopp-rice-ammaas.jpg" alt="Laminated BOPP rice bag" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/packaging/bopp-rice-aaina.jpg" alt="Retail rice pouch" loading="lazy" class="trade-mosaic__item" />
-        </div>
-      </div>
-    </section>
-
-    <!-- CAPACITY -->
-    <section class="section section--red" id="capacity">
-      <div class="container">
-        <div class="capacity-layout">
-          <div class="capacity-copy reveal" data-reveal="fade-right">
-            <span class="tag tag--light">Production Capacity</span>
-            <h2>Scale you can count on</h2>
-            <p>Combined network capacity across manufacturing units — from small-batch custom runs to high-volume commercial supply.</p>
+        <div class="hero-box" aria-hidden="true">
+          <div class="hero-box-card">
+            <div class="hero-box-face hero-box-front">
+              <div class="hero-box-brand">B2Binc</div>
+              <div class="hero-box-message">DESIGN YOUR<br><strong>CUSTOM BOX</strong><br>WITH US</div>
+              <div class="hero-box-rule"></div>
+              <div class="hero-box-meta"><span>FRAGILE</span><span>HANDLE WITH CARE</span></div>
+              <div class="hero-box-icons"><span>↕</span><span>♻</span><span>▣</span></div>
+            </div>
+            <div class="hero-box-face hero-box-side"></div>
+            <div class="hero-box-face hero-box-top"></div>
           </div>
-          <div class="capacity-grid reveal reveal-stagger" data-reveal="fade-left" id="capacityGrid"></div>
         </div>
-        <div class="capacity-visual reveal" data-reveal="zoom-in" data-delay="100">
-          <img
-            src="assets/packaging/hero-warehouse.jpg"
-            alt="Packaging manufacturing and warehouse facility"
-            width="1400"
-            height="500"
-            loading="lazy"
-          />
+
+        <div class="hero-metrics">
+          <div><b data-count="3">0</b><span>Core board layers</span></div>
+          <div><b data-count="11">0</b><span>Target sectors</span></div>
+          <div><b data-count="4">0</b><span>Production stages</span></div>
         </div>
+      </div>
+
+      <div class="scroll-hint">SCROLL <span>↓</span></div>
+    </section>
+
+    <section class="ticker">
+      <div class="ticker-track">
+        <span>CORRUGATED BOARD</span><b>✦</b><span>3-PLY / 5-PLY</span><b>✦</b>
+        <span>FLEXO PRINTING</span><b>✦</b><span>SLOTTING & DIE-CUT</span><b>✦</b>
+        <span>GLUING & STITCHING</span><b>✦</b><span>QUALITY TESTING</span><b>✦</b>
+        <span>CUSTOM PACKAGING</span><b>✦</b><span>LOGISTICS</span><b>✦</b>
+        <span>CORRUGATED BOARD</span><b>✦</b><span>3-PLY / 5-PLY</span><b>✦</b>
       </div>
     </section>
 
-    <!-- IMPORT EXPORT TEASER -->
-    <section class="section section--dark" id="trade">
-      <div class="container trade-teaser">
-        <div class="trade-teaser__copy reveal" data-reveal="fade-right">
-          <span class="tag tag--light">Separate Division</span>
-          <h2>Import &amp; Export</h2>
-          <p>Indian stone and bronze sculptures for international buyers — browse the export gallery with matching product details on click.</p>
-          <a href="import-export.html" class="btn btn--primary">Explore Export Gallery →</a>
+    <section class="products section" id="products">
+      <div class="product-system-head reveal">
+        <div>
+          <p class="label">02 / PRODUCT SYSTEM</p>
+          <h2>One material.<br><em>Many possibilities.</em></h2>
         </div>
-        <div class="trade-mosaic reveal reveal-stagger" data-reveal="fade-left" aria-label="Export sculpture preview">
-          <img src="assets/export/ganesha-stone.jpg" alt="Lord Ganesha stone sculpture" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/vishnu-stone.jpg" alt="Lord Vishnu stone sculpture" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/shiva-marble.jpg" alt="Lord Shiva marble sculpture" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/krishna-stone.jpg" alt="Lord Krishna stone sculpture" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/ram-darbar.jpg" alt="Ram Darbar stone sculpture" loading="lazy" class="trade-mosaic__item" />
-          <img src="assets/export/nataraja.jpg" alt="Nataraja bronze sculpture" loading="lazy" class="trade-mosaic__item" />
+        <p>We offer Corrugated Boxes which are manufactured as per highest standards and international industry-set norms by using advanced machinery.</p>
+      </div>
+
+      <div class="product-reference-note reveal">
+        <span>REFERENCE PROFILE</span>
+        <p>The product details and capacity figures below reproduce information from the supplied company profile for this prototype. Verify B2Binc's actual specifications and capacity before publishing.</p>
+      </div>
+
+      <div class="product-system-layout">
+        <div class="product-system-copy">
+          <article class="product-info-block reveal">
+            <div class="product-info-number">01</div>
+            <div>
+              <h3>Boards</h3>
+              <p>Corrugated boards / sheets for packaging construction and conversion.</p>
+              <ul>
+                <li>Available with <strong>A, B and C flute combinations</strong></li>
+                <li>Board width up to <strong>1800 mm</strong><sup>*</sup></li>
+                <li>Cut length up to <strong>3500 mm</strong><sup>*</sup></li>
+                <li>Current capacity: <strong>50 metric tons per day</strong><sup>*</sup></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="product-info-block reveal">
+            <div class="product-info-number">02</div>
+            <div>
+              <h3>Boxes</h3>
+              <p>Packaging boxes in multiple constructions and finishing options.</p>
+              <ul>
+                <li>Slotted Type or Die-Cut Boxes</li>
+                <li>Multi-colour Flexo Printed Boxes</li>
+                <li>Export-Grade and Heavy-Duty Shipper Boxes</li>
+                <li>Large Format Boxes</li>
+                <li>Any Special Packaging Boxes as required</li>
+                <li>Current capacity: <strong>Over 50,000 boxes per day</strong><sup>*</sup></li>
+              </ul>
+            </div>
+          </article>
         </div>
+
+        <div class="product-system-visual reveal" data-product-slideshow>
+          <figure class="product-feature-image product-feature-large product-slideshow-frame">
+            <img data-product-slide-image src="assets/product-airport-box-01.jpeg" alt="B2Binc corrugated box prepared for airport logistics">
+            <div class="product-slide-progress" aria-hidden="true"><span></span></div>
+            <figcaption><span data-product-slide-kicker>01 / SHIPPING</span><b data-product-slide-title>Protection built for movement.</b></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="product-capability-strip reveal">
+        <div><b>1800 <small>mm*</small></b><span>Reference board width</span></div>
+        <div><b>3500 <small>mm*</small></b><span>Reference cut length</span></div>
+        <div><b>50 <small>MT/day*</small></b><span>Reference board capacity</span></div>
+        <div><b>50,000+ <small>boxes/day*</small></b><span>Reference box capacity</span></div>
+      </div>
+
+      <div class="product-formats reveal">
+        <div class="product-formats-head">
+          <div>
+            <p class="label">PACKAGING FORMATS</p>
+            <h3>From board to finished box.</h3>
+          </div>
+          <p>Representative corrugated applications covering standard shipping, printed cartons, heavy-duty packaging and special product packs.</p>
+        </div>
+
+        <div class="product-format-grid" data-mobile-format-rotator>
+          <figure>
+            <img src="assets/custom-boxes.jpeg" alt="Corrugated boards and custom boxes">
+            <figcaption>Corrugated boards & sheets</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shipping-boxes.jpeg" alt="Corrugated shipping boxes">
+            <figcaption>Slotted & shipping boxes</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/branded-box.jpeg" alt="Multi-colour flexo printed corrugated box">
+            <figcaption>Multi-colour flexo printed boxes</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/industrial-packaging.jpeg" alt="Heavy-duty industrial corrugated packaging">
+            <figcaption>Export-grade & heavy-duty shippers</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/bike-packaging.jpeg" alt="Large format corrugated product packaging">
+            <figcaption>Large format & special packaging</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/mailer-box.jpeg" alt="Custom corrugated mailer packaging">
+            <figcaption>Custom packaging formats</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="product-footnote">* Reference figures reproduced from the supplied profile material; verify B2Binc specifications before publication.</p>
+    </section>
+
+    <section class="machine-section" id="infrastructure">
+      <div class="machine-bg"></div>
+      <div class="section machine-content">
+        <div class="heading light reveal">
+          <div><p class="label">03 / INFRASTRUCTURE</p><h2>Built for<br><em>corrugated production.</em></h2></div>
+          <p>A simple view of the infrastructure described in the supplied company profile — board manufacturing, printing and conversion, finishing, testing and supporting utilities.</p>
+        </div>
+
+        <div class="machine-floor">
+          <div class="conveyor-stage" aria-label="Animated corrugated boxes moving on a conveyor">
+            <div class="conveyor-track">
+              <div class="conveyor-rollers" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="conveyor-belt-surface"></div>
+            </div>
+            <div class="conveyor-carton carton-one"><div class="carton-flap"></div><div class="carton-face"><b>B2Binc</b><small>CUSTOM BOX</small></div><div class="carton-tape"></div></div>
+            <div class="conveyor-carton carton-two"><div class="carton-flap"></div><div class="carton-face"><b>B2Binc</b><small>PACK • PROTECT</small></div><div class="carton-tape"></div></div>
+            <div class="conveyor-carton carton-three"><div class="carton-flap"></div><div class="carton-face"><b>B2Binc</b><small>MOVE SAFELY</small></div><div class="carton-tape"></div></div>
+          </div>
+        </div>
+
+        <div class="infra-simple-intro reveal">
+          <div>
+            <p class="infra-kicker">REFERENCE PROFILE</p>
+            <h3>One connected production setup.</h3>
+          </div>
+          <p>The supplied profile presents the facility as an integrated corrugated packaging operation, combining board production, conversion, finishing, laboratory testing and essential plant utilities.</p>
+        </div>
+
+        <div class="infra-capability-list reveal">
+          <article><span>01</span><div><h3>Board manufacturing</h3><p>Fully automatic high-speed corrugated board manufacturing plant.</p></div></article>
+          <article><span>02</span><div><h3>Printing &amp; conversion</h3><p>Lead-edge flexo printing, slotting and die-cut machines for corrugated sheet conversion.</p></div></article>
+          <article><span>03</span><div><h3>Finishing</h3><p>Automatic gluing, pin stitching and strapping machines.</p></div></article>
+          <article><span>04</span><div><h3>Laboratory</h3><p>Fully equipped laboratory for material and finished-product quality checks.</p></div></article>
+        </div>
+
+        <div class="infra-machine-showcase reveal" data-mobile-infra-rotator>
+          <figure class="infra-machine-feature">
+            <img src="assets/infra/board-manufacturing-line.png" alt="Long corrugated board manufacturing line">
+            <figcaption><span>01 / BOARD LINE</span><b>Fully automatic high-speed corrugated board manufacturing</b></figcaption>
+          </figure>
+          <figure class="infra-machine-card">
+            <img src="assets/infra/flexo-printing-machine.png" alt="Flexographic printing machine for corrugated packaging">
+            <figcaption><span>02 / FLEXO</span><b>Printing, slotting &amp; die-cutting</b></figcaption>
+          </figure>
+          <figure class="infra-machine-card">
+            <img src="assets/infra/folder-gluer-strapping.png" alt="Corrugated folder gluer and strapping equipment">
+            <figcaption><span>03 / FINISHING</span><b>Gluing, stitching &amp; strapping</b></figcaption>
+          </figure>
+          <figure class="infra-machine-card">
+            <img src="assets/infra/box-conversion-finishing.png" alt="Corrugated box conversion and finishing machine">
+            <figcaption><span>04 / CONVERSION</span><b>Corrugated box conversion</b></figcaption>
+          </figure>
+          <figure class="infra-machine-card">
+            <img src="assets/infra/steam-boiler-generated.png" alt="Industrial steam boiler supporting corrugated production">
+            <figcaption><span>05 / UTILITY</span><b>Green-fuel steam boiler</b></figcaption>
+          </figure>
+        </div>
+
+        <div class="infra-utility-row reveal">
+          <div><b>80,000+*</b><span>sq ft covered built-up area</span></div>
+          <div><b>24×7*</b><span>power backup</span></div>
+          <div><b>RO*</b><span>water facilities</span></div>
+          <div><b>ERP*</b><span>homogenized operations</span></div>
+        </div>
+
+        <p class="infra-source-note">* Infrastructure figures and capability statements are reproduced from the supplied profile material and should be verified against B2Binc's actual plant specifications before publication.</p>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section section--light" id="contact">
-      <div class="container contact-layout">
-        <div class="contact-info reveal" data-reveal="fade-right">
-          <span class="tag">Connect</span>
-          <h2>Contact &amp; Enquiries</h2>
-          <p>Tell us your packaging or trade requirement. Our team responds within 1–2 business days.</p>
-          <ul class="contact-list">
-            <li>
-              <strong>Email</strong>
-              <a href="mailto:info@b2binc.in">info@b2binc.in</a>
-            </li>
-            <li>
-              <strong>Phone</strong>
-              <a href="tel:+919999840805">+91 99998 40805</a>
-            </li>
-            <li>
-              <strong>Office</strong>
-              <span>Gurugram, Haryana, India</span>
-            </li>
-            <li>
-              <strong>Hours</strong>
-              <span>Mon – Sat, 9:30 AM – 6:30 PM IST</span>
-            </li>
-          </ul>
+    <section class="testing-section section" id="quality">
+      <div class="testing-head reveal">
+        <div>
+          <p class="label">04 / QUALITY + TESTING</p>
+          <h2>Testing that keeps<br><em>every box consistent.</em></h2>
         </div>
-        <div class="reveal" id="contact-form" data-reveal="fade-left" data-delay="80">
-          <form class="form" id="queryForm" novalidate>
-            <h3>Submit your query</h3>
-            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <div class="form__row">
-              <div class="form__field">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required autocomplete="name" />
-              </div>
-              <div class="form__field">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" required />
-              </div>
-            </div>
-            <div class="form__row">
-              <div class="form__field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required autocomplete="email" />
-              </div>
-              <div class="form__field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required />
-              </div>
-            </div>
-            <div class="form__field">
-              <label for="interest">I am interested in</label>
-              <select id="interest" name="interest" required>
-                <option value="">Select</option>
-                <option>Corrugated Packaging</option>
-                <option>Plastic / BOPP Bags</option>
-                <option>Import / Export</option>
-                <option>General Enquiry</option>
-              </select>
-            </div>
-            <div class="form__field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Quantity, size, location, timeline…"></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full" id="formSubmitBtn">Send enquiry</button>
-            <p class="form__note" id="formNote" role="status"></p>
-          </form>
+        <p>Our reference profile lists dedicated checks for incoming raw materials and finished corrugated products. The equipment visuals below use the separate laboratory images supplied for this prototype.</p>
+      </div>
+
+      <div class="testing-panels">
+        <article class="testing-panel reveal">
+          <div class="testing-panel-copy">
+            <div class="testing-panel-kicker"><span>01</span> RAW MATERIAL TESTING</div>
+            <h3>Before production<br>starts.</h3>
+            <p>Reference checks used to evaluate the incoming board and material properties before conversion.</p>
+            <ul class="testing-list-simple">
+              <li><b>01</b> Test for GSM</li>
+              <li><b>02</b> Bursting Strength</li>
+              <li><b>03</b> Cobb Value</li>
+              <li><b>04</b> Moisture content</li>
+              <li><b>05</b> Ring Crush Test</li>
+              <li><b>06</b> Flat Crush Test</li>
+              <li><b>07</b> Viscosity Test</li>
+            </ul>
+          </div>
+          <div class="testing-image-grid">
+            <figure class="testing-image-main"><img src="assets/test-bursting-strength.png" alt="Bursting strength testing equipment"><figcaption>Bursting Strength</figcaption></figure>
+            <figure><img src="assets/test-cobb.png" alt="Cobb testing equipment"><figcaption>Cobb Value</figcaption></figure>
+            <figure><img src="assets/test-tools-overview.png" alt="Corrugated laboratory test tools"><figcaption>Measurement & sample tools</figcaption></figure>
+          </div>
+        </article>
+
+        <article class="testing-panel reveal">
+          <div class="testing-panel-copy">
+            <div class="testing-panel-kicker"><span>02</span> FINAL PRODUCT TESTING</div>
+            <h3>Before the box<br>moves out.</h3>
+            <p>Reference checks applied to the finished board or box to confirm dimensions, strength and construction.</p>
+            <ul class="testing-list-simple">
+              <li><b>01</b> Dimension Test</li>
+              <li><b>02</b> Test for the Bursting Strength</li>
+              <li><b>03</b> Punching Resistance of Board</li>
+              <li><b>04</b> Compression of the box</li>
+              <li><b>05</b> Sheer Strength test</li>
+              <li><b>06</b> Moisture content</li>
+              <li><b>07</b> Board thickness Test</li>
+              <li><b>08</b> Edge crush Test</li>
+            </ul>
+          </div>
+          <div class="testing-image-grid">
+            <figure class="testing-image-main"><img src="assets/test-box-compression.png" alt="Box compression testing equipment"><figcaption>Box Compression</figcaption></figure>
+            <figure><img src="assets/test-tensile.png" alt="Strength testing equipment"><figcaption>Strength Testing</figcaption></figure>
+            <figure><img src="assets/test-crease-cobb.png" alt="Crease and Cobb testing equipment"><figcaption>Crease / Cobb</figcaption></figure>
+          </div>
+        </article>
+      </div>
+
+      <div class="testing-note reveal">
+        <span>LABORATORY REFERENCE</span>
+        <p>Fully equipped laboratory • raw material testing • final product testing. Verify B2Binc's actual equipment, test standards and certifications before commercial publication.</p>
+      </div>
+    </section>
+
+    <section class="specs section">
+      <div class="spec-card reveal">
+        <div class="spec-top"><span>REFERENCE PRODUCT CAPABILITY</span><b>BOARDS + BOXES</b></div>
+        <div class="spec-body">
+          <div><span>BOARD CONSTRUCTION</span><b>3-Ply / 5-Ply</b></div>
+          <div><span>FLUTE OPTIONS</span><b>A / B / C</b></div>
+          <div><span>BOARD WIDTH</span><b>Up to 1,800 mm*</b></div>
+          <div><span>CUT LENGTH</span><b>Up to 3,500 mm*</b></div>
+          <div><span>BOARD CAPACITY</span><b>50 MT/day*</b></div>
+          <div><span>BOX OUTPUT</span><b>50,000+ / day*</b></div>
         </div>
+        <div class="spec-details">
+          <div><b>Boards / Sheets</b><p>Corrugated boards and sheets with A, B and C flute combinations.</p></div>
+          <div><b>Box formats</b><p>Slotted or die-cut boxes, multi-colour flexo printed boxes, export-grade and heavy-duty shipper boxes, large-format boxes and special packaging constructions.</p></div>
+          <div><b>Conversion</b><p>Printing, slotting, die-cutting, folding, gluing, stitching, counting/ejecting and strapping workflows are represented in the reference capability.</p></div>
+        </div>
+        <small>*Reference values taken from the supplied profile images. Replace with B2Binc's verified specifications before commercial publication.</small>
+      </div>
+    </section>
+
+    <section class="sectors section" id="sectors">
+      <div class="heading market-heading reveal">
+        <div>
+          <p class="label">05 / MARKET COVERAGE</p>
+          <h2>Markets we<br><em>serve.</em></h2>
+        </div>
+      </div>
+
+      <div class="market-labels reveal" aria-label="Market sectors">
+        <span>FMCG Sector</span>
+        <span>Industrial Sector</span>
+        <span>Automotive Sector</span>
+        <span>Electricals &amp; Appliances Sector</span>
+        <span>IT &amp; Hardware Sector</span>
+        <span>Pharmaceutical Sector</span>
+        <span>Fashion, Footwear &amp; Sports Sector</span>
+        <span>Printing &amp; Publishing Sector</span>
+        <span>Health &amp; Wellness Sector</span>
+        <span>Cottage &amp; MSME Sector</span>
+        <span>Logistics Support</span>
+        <span>Every other client in any sector</span>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="cta-bg"></div>
+      <div class="section cta-grid">
+        <div class="cta-copy reveal">
+          <p class="label">06 / START A PROJECT</p>
+          <h2>What are you<br><em>packing next?</em></h2>
+          <p>Send the basic requirement. We will use the prototype workflow to capture the enquiry and prepare it for your sales/operations process.</p>
+          <div class="contact-list">
+            <div><small>EMAIL</small><b>info@b2binc.in</b></div>
+            <div><small>PHONE</small><b>+91 99998 40805</b></div>
+            <div><small>OFFICE</small><b>Gurugram, Haryana, India</b></div>
+          </div>
+        </div>
+        <form class="quote-form" id="quoteForm">
+          <label>Name<input name="name" required placeholder="Your name"></label>
+          <label>Company<input name="company" required placeholder="Company"></label>
+          <label>Email<input name="email" type="email" required placeholder="name@company.com"></label>
+          <label>Phone<input name="phone" required placeholder="+91"></label>
+          <label class="full">Requirement<select name="interest"><option>Corrugated Board</option><option>Shipping Boxes</option><option>E-commerce Mailers</option><option>Industrial Packaging</option><option>Printed Cartons</option><option>Custom / Die-cut</option><option>Other</option></select></label>
+          <label class="full">Message<textarea name="message" rows="5" placeholder="Size, quantity, product, destination, timeline..."></textarea></label>
+          <button class="button orange full" type="submit">Send enquiry <b>↗</b></button>
+          <div class="form-status full" id="formStatus"></div>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <span class="logo__mark">B2B</span>
-        <p>B2Binc — Business to Business Indian National Commerce.</p>
-      </div>
-      <nav class="footer__nav">
-        <a href="corrugated.html">Corrugated</a>
-        <a href="plastic-packaging.html">Plastic</a>
-        <a href="import-export.html">Import / Export</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <p class="footer__copy">© <span id="year"></span> B2Binc. All rights reserved.</p>
+  <footer>
+    <div class="footer-inner">
+      <div class="logo"><span class="logo-mark">B2B</span><span><b>B2Binc</b><small>BUSINESS TO BUSINESS INDIAN NATIONAL COMMERCE</small></span></div>
+      <p>Corrugated packaging · Manufacturing coordination · B2B commerce</p>
+      <div class="footer-links"><a href="#products">Products</a><a href="#infrastructure">Infrastructure</a><a href="#quality">Quality</a><a href="#contact">Contact</a></div>
+      <small>Prototype · © <span id="year"></span> B2Binc</small>
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

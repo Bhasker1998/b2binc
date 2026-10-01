@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+<rect width="900" height="520" rx="28" fill="#171b1c"/>
+<g stroke="#aeb5b6" stroke-width="7" fill="#252b2c">
+<rect x="75" y="155" width="220" height="190" rx="14"/><rect x="340" y="125" width="220" height="220" rx="14"/><rect x="605" y="155" width="220" height="190" rx="14"/>
+</g>
+<g fill="#e85b22"><rect x="145" y="185" width="80" height="12" rx="4"/><rect x="410" y="155" width="80" height="12" rx="4"/><rect x="675" y="185" width="80" height="12" rx="4"/></g>
+<g fill="#d59a5a"><rect x="120" y="240" width="130" height="22" rx="4"/><rect x="385" y="220" width="130" height="22" rx="4"/><rect x="650" y="240" width="130" height="22" rx="4"/></g>
+<g stroke="#dfe2e2" stroke-width="5" fill="none"><path d="M160 220v-35M445 190v-35M710 220v-35"/><path d="M180 275v45M465 255v65M730 275v45"/></g>
+<text x="60" y="65" fill="#fff" font-family="Arial" font-size="30" font-weight="700">QUALITY TESTING TOOLS</text>
+<text x="60" y="100" fill="#9aa1a2" font-family="Arial" font-size="18">GSM • Compression • Burst • Moisture • Crush testing</text>
+</svg>
